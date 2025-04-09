@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Mass extends Unit<Mass> {
 
-    private static List<Mass> all = new LinkedList<>();
+    private static final List<Mass> all = new LinkedList<>();
 
     public static final Mass KILOGRAMA = new Mass("Quilograma", "Kg", 1000.0);
     public static final Mass HECTOGRAMA = new Mass("Hectograma", "hg", 100.0);

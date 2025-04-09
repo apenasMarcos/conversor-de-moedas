@@ -120,9 +120,7 @@ public class NavBar extends JPanel {
             frame.setTitle(screen.getTitle());
         }
         cardLayout.show(pageContentContainer, screen.getName());
-        navItemAndPainel.forEach((sc, button) -> {
-            button.setBackground(navBarColor);
-        });
+        navItemAndPainel.forEach((sc, button) -> button.setBackground(navBarColor));
         Component navItem = navItemAndPainel.get(screen);
         navItem.setBackground(navBarSelected);
     }

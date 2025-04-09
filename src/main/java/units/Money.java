@@ -12,8 +12,8 @@ import java.util.stream.Collectors;
 
 public class Money extends Unit<Money> {
 
-    private static List<Money> all = new LinkedList<>();
-    private static NumberFormat nf = NumberFormat.getCurrencyInstance();
+    private static final List<Money> all = new LinkedList<>();
+    private static final NumberFormat nf = NumberFormat.getCurrencyInstance();
 
     public static final Money REAL = new Money("Real", "BRL", 0);
     public static final Money DOLAR = new Money("Dólar", "USD", 1.0);
@@ -48,7 +48,7 @@ public class Money extends Unit<Money> {
 
     static public List<String> getAllSymbols() {
         return Arrays.stream(getAll())
-                .map(coin -> coin.getSymbol())
+                .map(Money::getSymbol)
                 .collect(Collectors.toList());
     }
 

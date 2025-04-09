@@ -4,7 +4,6 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
@@ -12,6 +11,7 @@ import java.net.SocketException;
 import java.net.URL;
 import java.net.UnknownHostException;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Api {
 
@@ -33,9 +33,8 @@ public class Api {
             }
 
             BufferedReader response = new BufferedReader(new InputStreamReader((conexao.getInputStream())));
-            String stringOfResponseJson = convertJsonToString(response);
-            Map<String, Coin> coins = gson.fromJson(stringOfResponseJson, type);
-            return coins;
+            String stringOfResponseJson = response.lines().collect(Collectors.joining());
+            return gson.fromJson(stringOfResponseJson, type);
 
         } catch (SocketException e) {
             throw new SocketException("No internet access!");
@@ -43,14 +42,4 @@ public class Api {
             throw new UnknownHostException("Unable to connect to API!");
         }
     }
-
-    public static String convertJsonToString(BufferedReader buffereReader) throws IOException {
-        String response = "";
-        String json = "";
-        while ((response = buffereReader.readLine()) != null) {
-            json += response;
-        }
-        return json;
-    }
-
 }

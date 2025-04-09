@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Length extends Unit<Length> {
 
-    private static List<Length> all = new LinkedList<>();
+    private static final List<Length> all = new LinkedList<>();
 
     public static final Length MEGA_METRO = new Length("Megametro", "Mm", 1000000.0);
     public static final Length QUILOMETRO = new Length("Quilômetro", "km", 1000.0);

@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Temperature extends Unit<Temperature> {
 
-    private static List<Temperature> all = new LinkedList<>();
+    private static final List<Temperature> all = new LinkedList<>();
     private static final NumberFormat nf = NumberFormat.getCurrencyInstance();
 
     public static final Temperature CELSIUS = new Temperature("Celsius", "°C", 1.0, 0.0);

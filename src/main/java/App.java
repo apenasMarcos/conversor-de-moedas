@@ -8,8 +8,8 @@ public class App {
 
     public static void main(String[] args) throws Exception {
         FlatDarkLaf.setup();
-        SwingUtilities.invokeLater(Window::new);
         MoneyService.updateDollarEquivalenceOfCoins();
+        SwingUtilities.invokeLater(Window::new);
     }
 
 }

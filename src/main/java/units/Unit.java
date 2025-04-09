@@ -6,8 +6,8 @@ import java.math.RoundingMode;
 
 public abstract class Unit<T extends Unit> {
 
-    private String name;
-    private String symbol;
+    private final String name;
+    private final String symbol;
     protected double factor;
 
     public Unit(String name, String symbol, double factor) {
