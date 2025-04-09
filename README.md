@@ -60,19 +60,23 @@ Moedas suportadas:
 
 📦 Estrutura do Projeto
 
+```plaintext
 src/
-├── App.java                    # Classe principal
-├── view/                       # Interface gráfica (Swing)
+├── App.java                # Classe principal
+├── GUI/                    # Classes para Interface gráfica (Swing)
 ├── service/
-│   ├── Api.java                # Requisições HTTP e parsing da API
-│   └── MoneyService.java       # Atualização de cotações
+│   ├── Api.java            # Requisições HTTP e parsing da API
+│   └── MoneyService.java   # Atualização de cotações
+│   └── Coin.java           # Classe genérica de Mapper
 ├── units/
-│   ├── Unit.java               # Classe genérica de unidade
-│   ├── Money.java              # Unidade monetária
-│   ├── Length.java             # Unidade de comprimento
-│   ├── Mass.java               # Unidade de massa
-│   ├── Storage.java            # Unidade de armazenamento
-│   └── Temperature.java        # Unidade de temperatura
+│   ├── Unit.java           # Classe genérica de unidade
+│   ├── Money.java          # Unidade monetária
+│   ├── Length.java         # Unidade de comprimento
+│   ├── Mass.java           # Unidade de massa
+│   ├── DataStorage.java    # Unidade de armazenamento
+│   └── Temperature.java    # Unidade de temperatura
+```
+
 
 🧠 Tecnologias usadas
 
